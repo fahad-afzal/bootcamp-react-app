@@ -43,5 +43,5 @@ jobs:
         run: npm install -g surge
         
       - name: deploying on surge 
-        run: surge ./build http://falpha2.surge.sh/ --token ${{secrets.Surge-Token}}
+        run: surge ./build http://falpha2.surge.sh/ --token ${{secrets.Surge_Token}}
        
