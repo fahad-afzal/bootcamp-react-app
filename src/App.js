@@ -1,15 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import Dinner from './dinner.js';
+
 
 function App() {
+  let [count, setCount] = useState(25);
+
+
   return (
-    <div classname="App">
-      <Dinner dishName="Chicken Masala" sweetdish="Kheer"/>
-      <hr/>
-      <Dinner dishName="Chicken Karahi" sweetdish="Gaajar ka halwa"/>
-      <hr/>
-      <Dinner dishName="Chicken Chaamp" sweetdish="Jalebi"/>    
+    <div>   
+      <h1>Value of counter variable: {count} </h1>
+      <br />
+  <button> onClick={
+  ()=> alert ('Button Pressed')
+  }> 
+  Update Counter</button>
       </div>
   );
 }
