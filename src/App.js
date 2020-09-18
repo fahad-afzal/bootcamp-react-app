@@ -1,19 +1,24 @@
 import React, {useState} from 'react';
+import {Message} from './Message.js'
 import './App.css';
 
 
 function App() {
-  let [count, setCount] = useState(25);
-
+  let [count, setCount] = useState(1);
+  let [isMorning, setMorning] = useState(false);
 
   return (
-    <div>   
-      <h1>Value of counter variable: {count} </h1>
+    <div className={`box ${isMorning ? 'daylight' : ''}` }>  
+      <h1>Have a good {isMorning ? 'Morning' : 'Night'}</h1> 
+
+      <Message counter={count}/>
       <br />
-  <button> onClick={
-  ()=> alert ('Button Pressed')
-  }> 
+  <button onClick={
+  ()=> setCount(count + 1)
+  }>
   Update Counter</button>
+
+  <button onClick={()=>setMorning(!isMorning)}> Update Day </button>
       </div>
   );
 }
