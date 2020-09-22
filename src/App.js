@@ -1,25 +1,19 @@
 import React, {useState} from 'react';
-import {Message} from './Message.js'
 import './App.css';
+import counterContext from './CounterContext';
+import Parent from './Parent';
 
 
 function App() {
-  let [count, setCount] = useState(1);
-  let [isMorning, setMorning] = useState(false);
+return(
+  <counterContext.Provider value={788}> 
+     <div>
+      <Parent />
 
-  return (
-    <div className={`box ${isMorning ? 'daylight' : ''}` }>  
-      <h1>Have a good {isMorning ? 'Morning' : 'Night'}</h1> 
+     </div>
+ 
+ </counterContext.Provider>
 
-      <Message counter={count}/>
-      <br />
-  <button onClick={
-  ()=> setCount(count + 1)
-  }>
-  Update Counter</button>
-
-  <button onClick={()=>setMorning(!isMorning)}> Update Day </button>
-      </div>
   );
 }
 
